@@ -20,6 +20,7 @@ using System.Configuration;
 using Newtonsoft.Json;
 using Microsoft.WindowsAzure.Storage.Queue;
 using Microsoft.WindowsAzure.Storage;
+using System.Reflection;
 
 namespace GxDcCPSSitesCreationsfnc
 {
@@ -200,7 +201,8 @@ namespace GxDcCPSSitesCreationsfnc
         /// <param name="log"></param>
         /// <param name="functionContext"></param>
         public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext)
-        {
+        {    try
+            {
             ctx.RequestTimeout = Timeout.Infinite;
             Web web = ctx.Web;
             ctx.Load(web, w => w.Title);
@@ -227,8 +229,12 @@ namespace GxDcCPSSitesCreationsfnc
             log.Info($"schemaDir is {schemaDir}");
             XMLTemplateProvider sitesProvider = new XMLFileSystemTemplateProvider(schemaDir, "");
 
-            ProvisioningTemplate template = sitesProvider.GetTemplate(PNP_TEMPLATE_FILE);
+        
+            ProvisioningTemplate template = sitesProvider.GetTemplate(PNP_TEMPLATE_FILE); 
             log.Info($"Successfully found template with ID '{template.Id}'");
+          
+      
+           
 
             ProvisioningTemplateApplyingInformation ptai = new ProvisioningTemplateApplyingInformation
             {
@@ -243,7 +249,15 @@ namespace GxDcCPSSitesCreationsfnc
 
             web.ApplyProvisioningTemplate(template, ptai);
 
-            log.Info($"Site {web.Title} apply template successfully.");
+            log.Info($"Site {web.Title} apply template successfully.");      
+              }
+            catch (ReflectionTypeLoadException ex)
+            {
+                foreach (var item in ex.LoaderExceptions)
+                {
+                    log.Info(item.Message);
+                }
+            }
         }
         /// <summary>
         /// This method will get AAD access token.
