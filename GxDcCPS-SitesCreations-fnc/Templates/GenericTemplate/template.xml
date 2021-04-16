@@ -964,7 +964,7 @@
 				<pnp:File Src="SiteAssets/SitePages/Communications/5340-gouv_EN_couleurs-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
 				<pnp:File Src="SiteAssets/SitePages/Communications/10004-Canada-couleur-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
 				<pnp:File Src="SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg" Folder="SiteAssets/SitePages/About-us" Overwrite="true" Level="Published" />
-				<pnp:File Src="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business-people-planning-strategy-in-office-GRVBWNJ.jpg" Folder="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning" Overwrite="true" Level="Published" />
+				<pnp:File Src="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg" Folder="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning" Overwrite="true" Level="Published" />
 				<pnp:File Src="SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg" Folder="SiteAssets/SitePages/Welcome-to--CommsChat" Overwrite="true" Level="Published" />
 				<pnp:File Src="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg" Folder="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier" Overwrite="true" Level="Published" />
 				<pnp:File Src="SiteAssets/__siteIcon__.png" Folder="SiteAssets/" Overwrite="true" Level="Published" />
@@ -1067,7 +1067,7 @@
 						</pnp:Section>
 					</pnp:Sections>
 				</pnp:ClientSidePage>
-				<pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How to develop strategic messaging" ThumbnailUrl="https://{fqdn}{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business-people-planning-strategy-in-office-GRVBWNJ.jpg}&amp;ext=jpg" PageName="Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx">
+				<pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How to develop strategic messaging" ThumbnailUrl="https://{fqdn}{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx">
 					<pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
 					<pnp:Sections>
 						<pnp:Section Order="1" Type="OneColumn">
@@ -1112,7 +1112,7 @@
 						</pnp:Section>
 					</pnp:Sections>
 				</pnp:ClientSidePage>
-				<pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment élaborer des messages stratégiques" ThumbnailUrl="https://{fqdn}{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business-people-planning-strategy-in-office-GRVBWNJ.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx">
+				<pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment élaborer des messages stratégiques" ThumbnailUrl="https://{fqdn}{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx">
 					<pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
 					<pnp:Sections>
 						<pnp:Section Order="1" Type="OneColumn">
