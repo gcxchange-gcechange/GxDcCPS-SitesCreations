@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GxDcCPS-SitesCreations-fnc", "GxDcCPS-SitesCreations-fnc\GxDcCPS-SitesCreations-fnc.csproj", "{F1ED12B8-05C2-4640-A064-A9FE848A2F63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1ED12B8-05C2-4640-A064-A9FE848A2F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1ED12B8-05C2-4640-A064-A9FE848A2F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1ED12B8-05C2-4640-A064-A9FE848A2F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1ED12B8-05C2-4640-A064-A9FE848A2F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCBDA09-DBC1-4922-8FEF-E1D85F57AA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCBDA09-DBC1-4922-8FEF-E1D85F57AA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCBDA09-DBC1-4922-8FEF-E1D85F57AA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCBDA09-DBC1-4922-8FEF-E1D85F57AA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3DF327C-E53C-47B3-B0A1-AF28A91EAF6A}
+	EndGlobalSection
+EndGlobal
