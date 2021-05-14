@@ -23,7 +23,7 @@ namespace GxDcCPSSitesCreationsfnc
         public string displayName { get; set; }
 
         public string emails { get; set; }
-        public string? comments { get; set; }
+        public string comments { get; set; }
 
         public string status { get; set; }
 
