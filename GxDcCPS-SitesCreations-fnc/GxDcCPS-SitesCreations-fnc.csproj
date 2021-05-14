@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
     <AzureFunctionsVersion>v1</AzureFunctionsVersion>
-    <LangVersion>8.0</LangVersion>
     <UserSecretsId>636c2b76-ed6e-4e53-9085-d39891458856</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
