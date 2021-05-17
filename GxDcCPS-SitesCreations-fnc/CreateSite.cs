@@ -28,8 +28,6 @@ namespace GxDcCPSSitesCreationsfnc
     {
 
         static readonly string PNP_TEMPLATE_FILE = "template.xml";
-        // static string siteId = "dc4145ad-428b-4e9f-a411-627ab525c06b,4b447531-c890-4345-b486-fdc317b95e03";        
-        //static string listId = "2ef1680d-b577-4ec1-9332-b6cc3ffc306a";
 
         static string siteRelativePath = "teams/scw";
         static string hostname = "tbssctdev.sharepoint.com";
