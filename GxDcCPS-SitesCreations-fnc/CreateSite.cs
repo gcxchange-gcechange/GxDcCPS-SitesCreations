@@ -71,8 +71,10 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info("Wait 3 minutes for site setup.");
                 Thread.Sleep(3 * 60 * 1000);
 
+                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
+
                 ClientContext ctx = new OfficeDevPnP.Core.AuthenticationManager().GetAppOnlyAuthenticatedContext(targetSiteUrl, appOnlyId, appOnlySecret);
-                ApplyProvisioningTemplate(ctx, log, functionContext);
+                ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions);
                 UpdateStatus(graphClient, log, itemId, siteId, listId);
 
                 //send message to create-tems queue
@@ -198,7 +200,7 @@ namespace GxDcCPSSitesCreationsfnc
         /// <param name="ctx"></param>
         /// <param name="log"></param>
         /// <param name="functionContext"></param>
-        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext)
+        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext, string description)
         {    try
             {
             ctx.RequestTimeout = Timeout.Infinite;
@@ -244,6 +246,11 @@ namespace GxDcCPSSitesCreationsfnc
             FileSystemConnector connector = new FileSystemConnector(schemaDir, "");
 
             template.Connector = connector;
+
+            string[] descriptions = description.Split('|');
+
+            template.Parameters.Add("descEN", descriptions[0]);
+            template.Parameters.Add("descFR", descriptions[1]);
 
             web.ApplyProvisioningTemplate(template, ptai);
 
@@ -370,6 +377,20 @@ namespace GxDcCPSSitesCreationsfnc
                 break;
             }
             return listId;
+        }
+
+        public static async Task<string> GetSiteDescriptions(GraphServiceClient graphClient, string siteId, string listId, string itemId)
+        {
+
+            var items = await graphClient.Sites[siteId].Lists[listId].Items[itemId].Fields
+                .Request()
+                .Select("Space_x0020_Description_x0020__x, Space_x0020_Description_x0020__x0")
+                .GetAsync();
+
+            var descEn = items.AdditionalData["Space_x0020_Description_x0020__x"];
+            var descfr = items.AdditionalData["Space_x0020_Description_x0020__x0"];
+
+            return descEn + "|" + descfr;
         }
     }
 }
