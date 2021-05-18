@@ -324,7 +324,7 @@ namespace GxDcCPSSitesCreationsfnc
         {
             var directoryObject = new DirectoryObject
             {
-                Id = "552b16be-8a50-460c-ba24-907f45376ac1" //teamcreator
+                Id = "c2b08e0d-de66-4f99-be56-c81ccde5fb0c" //teamcreator
             };
 
             await graphClient.Groups[groupId].Owners.References
