@@ -21,6 +21,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
+    <None Update="Templates\GenericTemplatev2\documents\General\New Text Document.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\GenericTemplatev2\SiteAssets\SitePages\About-us\3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\GenericTemplatev2\SiteAssets\__siteIcon__.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\GenericTemplatev2\template.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\GenericTemplate\documents\General\New Text Document.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -62,5 +74,8 @@
     <Reference Update="System.Xml">
       <Private>true</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\GenericTemplatev2\documents\General\" />
   </ItemGroup>
 </Project>

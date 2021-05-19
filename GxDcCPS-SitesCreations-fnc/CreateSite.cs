@@ -71,8 +71,7 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info("Wait 3 minutes for site setup.");
                 Thread.Sleep(3 * 60 * 1000);
 
-                // var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
-                var siteDescriptions = "red|blue";
+                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
 
                 ClientContext ctx = new OfficeDevPnP.Core.AuthenticationManager().GetAppOnlyAuthenticatedContext(targetSiteUrl, appOnlyId, appOnlySecret);
                 ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions);
@@ -219,12 +218,12 @@ namespace GxDcCPSSitesCreationsfnc
                 string workingDirectory = Environment.CurrentDirectory;
                 currentDirectory = System.IO.Directory.GetParent(workingDirectory).Parent.Parent.FullName;
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplatev2";
+                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplate";
             }
             else
             {
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplatev2";
+                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplate";
             }
 
             log.Info($"schemaDir is {schemaDir}");
@@ -249,6 +248,8 @@ namespace GxDcCPSSitesCreationsfnc
             template.Connector = connector;
 
             string[] descriptions = description.Split('|');
+
+            log.Info($"The site description is {description}");
 
             template.Parameters.Add("descEN", descriptions[0]);
             template.Parameters.Add("descFR", descriptions[1]);

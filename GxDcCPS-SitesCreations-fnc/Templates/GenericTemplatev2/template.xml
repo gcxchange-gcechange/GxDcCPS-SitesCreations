@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
   <pnp:Preferences Generator="PnP.Framework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
-    <pnp:Parameter Key="descEN">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;a workspace for real-time collaboration and communication, meetings, file and app sharing, and even the occasional emoji! All in one place, all in the open, all accessible to everyone.&lt;/span&gt;&lt;/span&gt;</pnp:Parameter>
-    <pnp:Parameter Key="descFR">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;un espace de travail pour la collaboration et la communication en temps réel, les réunions, le partage de fichiers et d'applications, et même les emoji occasionnels! Le tout en un seul endroit, tout en plein air, le tout accessible à tous.&lt;/span&gt;&lt;/span&gt;</pnp:Parameter>
+    <pnp:Parameters Key="descEN">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;a workspace for real-time collaboration and communication, meetings, file and app sharing, and even the occasional emoji! All in one place, all in the open, all accessible to everyone.&lt;/span&gt;&lt;/span&gt;</pnp:Parameters>
+    <pnp:Parameters Key="descFR">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;un espace de travail pour la collaboration et la communication en temps réel, les réunions, le partage de fichiers et d'applications, et même les emoji occasionnels! Le tout en un seul endroit, tout en plein air, le tout accessible à tous.&lt;/span&gt;&lt;/span&gt;</pnp:Parameters>
   </pnp:Preferences>
   <pnp:Templates ID="CONTAINER-TEMPLATE-E43744EB02DD479DB0FA009B7967177D">
     <pnp:ProvisioningTemplate ID="TEMPLATE-E43744EB02DD479DB0FA009B7967177D" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
