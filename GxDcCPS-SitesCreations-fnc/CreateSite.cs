@@ -71,7 +71,8 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info("Wait 3 minutes for site setup.");
                 Thread.Sleep(3 * 60 * 1000);
 
-                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
+                // var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
+                var siteDescriptions = "red|blue";
 
                 ClientContext ctx = new OfficeDevPnP.Core.AuthenticationManager().GetAppOnlyAuthenticatedContext(targetSiteUrl, appOnlyId, appOnlySecret);
                 ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions);
@@ -218,12 +219,12 @@ namespace GxDcCPSSitesCreationsfnc
                 string workingDirectory = Environment.CurrentDirectory;
                 currentDirectory = System.IO.Directory.GetParent(workingDirectory).Parent.Parent.FullName;
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplate";
+                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplatev2";
             }
             else
             {
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplate";
+                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplatev2";
             }
 
             log.Info($"schemaDir is {schemaDir}");
@@ -379,6 +380,14 @@ namespace GxDcCPSSitesCreationsfnc
             return listId;
         }
 
+        /// <summary>
+        /// Get English | French description from space requests
+        /// </summary>
+        /// <param name="graphClient"></param>
+        /// <param name="siteId"></param>
+        /// <param name="listId"></param>
+        /// <param name="itemId"></param>
+        /// <returns></returns>
         public static async Task<string> GetSiteDescriptions(GraphServiceClient graphClient, string siteId, string listId, string itemId)
         {
 
