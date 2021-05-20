@@ -218,12 +218,12 @@ namespace GxDcCPSSitesCreationsfnc
                 string workingDirectory = Environment.CurrentDirectory;
                 currentDirectory = System.IO.Directory.GetParent(workingDirectory).Parent.Parent.FullName;
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplate";
+                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplatev2";
             }
             else
             {
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplate";
+                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplatev2";
             }
 
             log.Info($"schemaDir is {schemaDir}");
@@ -248,8 +248,6 @@ namespace GxDcCPSSitesCreationsfnc
             template.Connector = connector;
 
             string[] descriptions = description.Split('|');
-
-            log.Info($"The site description is {description}");
 
             template.Parameters.Add("descEN", descriptions[0]);
             template.Parameters.Add("descFR", descriptions[1]);

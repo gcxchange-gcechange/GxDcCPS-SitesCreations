@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
   <pnp:Preferences Generator="PnP.Framework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
-    <pnp:Parameters Key="descEN">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;a workspace for real-time collaboration and communication, meetings, file and app sharing, and even the occasional emoji! All in one place, all in the open, all accessible to everyone.&lt;/span&gt;&lt;/span&gt;</pnp:Parameters>
-    <pnp:Parameters Key="descFR">&lt;span class=&quot;fontSizeMediumPlus&quot;&gt;&lt;span class=&quot;fontColorNeutralSecondary&quot;&gt;un espace de travail pour la collaboration et la communication en temps réel, les réunions, le partage de fichiers et d'applications, et même les emoji occasionnels! Le tout en un seul endroit, tout en plein air, le tout accessible à tous.&lt;/span&gt;&lt;/span&gt;</pnp:Parameters>
+	  <pnp:Parameters>
+        <pnp:Parameter Key="test1" />
+	  </pnp:Parameters>
   </pnp:Preferences>
   <pnp:Templates ID="CONTAINER-TEMPLATE-E43744EB02DD479DB0FA009B7967177D">
     <pnp:ProvisioningTemplate ID="TEMPLATE-E43744EB02DD479DB0FA009B7967177D" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
-      <pnp:WebSettings RequestAccessEmail="" NoCrawl="false" WelcomePage="SitePages/Home.aspx" SiteLogo="{hosturl}{site}/SiteAssets/__siteIcon__.png" AlternateCSS="" MasterPageUrl="{masterpagecatalog}/seattle.master" CustomMasterPageUrl="{masterpagecatalog}/seattle.master" HubSiteUrl="https://tbssctdev.sharepoint.com/sites/GCXCollab" CommentsOnSitePagesDisabled="false" QuickLaunchEnabled="true" MembersCanShare="true" SearchScope="DefaultScope" SearchBoxInNavBar="Inherit" />
-      <pnp:SiteSettings AllowDesigner="true" AllowCreateDeclarativeWorkflow="true" AllowSaveDeclarativeWorkflowAsTemplate="true" AllowSavePublishDeclarativeWorkflow="true" SearchBoxInNavBar="Inherit" SearchCenterUrl="" />
+      <pnp:WebSettings RequestAccessEmail="" NoCrawl="false" WelcomePage="SitePages/Home.aspx" SiteLogo="" AlternateCSS="" MasterPageUrl="{masterpagecatalog}/seattle.master" CustomMasterPageUrl="{masterpagecatalog}/seattle.master" HubSiteUrl="https://tbssctdev.sharepoint.com/sites/GCXCollab" CommentsOnSitePagesDisabled="false" QuickLaunchEnabled="true" MembersCanShare="true" SearchScope="DefaultScope" SearchBoxInNavBar="Inherit" />
       <pnp:RegionalSettings AdjustHijriDays="0" AlternateCalendarType="None" CalendarType="Gregorian" Collation="25" FirstDayOfWeek="Sunday" FirstWeekOfYear="0" LocaleId="1033" ShowWeeks="false" Time24="false" TimeZone="10" WorkDayEndHour="5:00PM" WorkDays="62" WorkDayStartHour="8:00AM" />
       <pnp:SupportedUILanguages>
         <pnp:SupportedUILanguage LCID="1033" />
@@ -28,7 +28,7 @@
           <pnp:User Name="c:0o.c|federateddirectoryclaimprovider|046ecdf8-60c4-4740-844b-6249fc83662a" />
         </pnp:AdditionalMembers>
         <pnp:Permissions>
-          <pnp:RoleDefinitions>
+          <!--<pnp:RoleDefinitions>
             <pnp:RoleDefinition Name="Generic_Owners" Description="">
               <pnp:Permissions>
                 <pnp:Permission>EmptyMask</pnp:Permission>
@@ -75,7 +75,7 @@
                 <pnp:Permission>ViewPages</pnp:Permission>
               </pnp:Permissions>
             </pnp:RoleDefinition>
-          </pnp:RoleDefinitions>
+          </pnp:RoleDefinitions>-->
           <pnp:RoleAssignments>
             <pnp:RoleAssignment Principal="c:0t.c|tenant|b2644e16-10e0-4a7a-96a6-06d49ced00c6" RoleDefinition="{roledefinition:Reader}" />
             <pnp:RoleAssignment Principal="c:0t.c|tenant|01d08693-97f2-45ca-b0a4-7cc2ce240445" RoleDefinition="{roledefinition:Administrator}" />
@@ -84,11 +84,11 @@
       </pnp:Security>
       <pnp:Navigation AddNewPagesToNavigation="true" CreateFriendlyUrlsForNewPages="true">
         <pnp:GlobalNavigation NavigationType="Structural">
-          <pnp:StructuralNavigation RemoveExistingNodes="false" />
+          <pnp:StructuralNavigation RemoveExistingNodes="true" />
         </pnp:GlobalNavigation>
         <pnp:CurrentNavigation NavigationType="StructuralLocal">
-          <pnp:StructuralNavigation RemoveExistingNodes="false">
-            <pnp:NavigationNode Title="Home" Url="{site}" />
+          <pnp:StructuralNavigation RemoveExistingNodes="true">
+            <pnp:NavigationNode Title="Home / Accueil" Url="{site}" />
             <pnp:NavigationNode Title="About / À propos" Url="{site}/SitePages/About-us.aspx" />
             <pnp:NavigationNode Title="Conversations / Des conversations" Url="https://teams.microsoft.com/l/team/19:9192aa5ff4334ccdae05e5d632aa1c38@thread.tacv2/conversations?groupId=046ecdf8-60c4-4740-844b-6249fc83662a&amp;tenantId=ddbd240e-11ba-47a6-abeb-e1a6be847a17" IsExternal="true" />
             <pnp:NavigationNode Title="Documents / Des documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" />
@@ -292,6 +292,9 @@
             <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
             <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
           </pnp:FieldRefs>
+			<pnp:Folders>
+				<pnp:Folder Name="General" />
+			</pnp:Folders>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Public Documents" Description="" DocumentTemplate="{site}/PD/Forms/template.dotx" TemplateType="101" Url="PD" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/PD/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/PD/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/PD/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
@@ -522,8 +525,17 @@
           <pnp:Feature ID="b0d5ad7e-23bc-4545-98c6-de91686ba8bc" />
         </pnp:WebFeatures>
       </pnp:Features>
+		<pnp:Files>
+			<pnp:File Src="SiteAssets/SitePages/Communications/5340-gouv_EN_couleurs-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/SitePages/Communications/10004-Canada-couleur-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg" Folder="SiteAssets/SitePages/About-us" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg" Folder="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg" Folder="SiteAssets/SitePages/Welcome-to--CommsChat" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg" Folder="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier" Overwrite="true" Level="Published" />
+			<pnp:File Src="SiteAssets/__siteIcon__.png" Folder="SiteAssets/" Overwrite="true" Level="Published" />
+		</pnp:Files>
       <pnp:ClientSidePages>
-        <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" Layout="Home" Title="Home" ThumbnailUrl="" PageName="Home.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" EnableComments="false" Layout="Home" Title="Home" ThumbnailUrl="" PageName="Home.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn" BackgroundEmphasis="Strong">
@@ -591,7 +603,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How apps can make corporate communications easier" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=587808ff-e356-48f9-a52a-c0cdbd75bd52&amp;ext=jpg" PageName="How-apps-can-make-corporate-communications-easier.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How apps can make corporate communications easier" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg}&amp;ext=jpg" PageName="How-apps-can-make-corporate-communications-easier.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -605,7 +617,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: Welcome to #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=d7b130fa-15d5-4b22-b656-785e235cdab8&amp;ext=jpg" PageName="Welcome-to--CommsChat.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: Welcome to #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg}&amp;ext=jpg" PageName="Welcome-to--CommsChat.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -619,7 +631,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How to develop strategic messaging" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=3f546fc8-acb7-4af7-af3c-e72c0fc0e355&amp;ext=jpg" PageName="Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How to develop strategic messaging" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -633,7 +645,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="About us / À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=eb1d1456-0f4d-456f-8f31-5da2958f3554&amp;ext=jpg" PageName="About-us.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="About us / À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="About-us.aspx">
           <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="TwoColumnRight">
@@ -648,7 +660,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=eb1d1456-0f4d-456f-8f31-5da2958f3554&amp;ext=jpg" PageName="Exemple-d’article---À-propos-de-nous.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="Exemple-d’article---À-propos-de-nous.aspx">
           <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="TwoColumnRight">
@@ -663,7 +675,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment élaborer des messages stratégiques" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=3f546fc8-acb7-4af7-af3c-e72c0fc0e355&amp;ext=jpg" PageName="Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment élaborer des messages stratégiques" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -677,7 +689,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Bienvenue à #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=d7b130fa-15d5-4b22-b656-785e235cdab8&amp;ext=jpg" PageName="Exemple-d’article---Bienvenue-à--CommsChat.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Bienvenue à #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Bienvenue-à--CommsChat.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -691,7 +703,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment les applications peuvent faciliter les communications d’entreprise" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile=587808ff-e356-48f9-a52a-c0cdbd75bd52&amp;ext=jpg" PageName="Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment les applications peuvent faciliter les communications d’entreprise" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn">
@@ -706,7 +718,8 @@
           </pnp:Sections>
         </pnp:ClientSidePage>
       </pnp:ClientSidePages>
-      <pnp:Header Layout="Compact" BackgroundEmphasis="Strong" />
+	    <pnp:Header Layout="Compact" BackgroundEmphasis="Strong" />
+		<pnp:Theme Name="Blue" />
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
 </pnp:Provisioning>
