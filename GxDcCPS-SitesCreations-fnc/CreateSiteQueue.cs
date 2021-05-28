@@ -34,8 +34,10 @@ namespace GxDcCPSSitesCreationsfnc
             string emails = "";
             string requesterName = "";
             string requesterEmail = "";
+            string TENANT_NAME = ConfigurationManager.AppSettings["TENANT_NAME"];
 
-            string targetSiteUrl = $"https://tbssctdev.sharepoint.com/teams/{mailNickname}";
+
+            string targetSiteUrl = $"https://{TENANT_NAME}.sharepoint.com/teams/{mailNickname}";
             if (name == null)
             {
                 // Get request body
