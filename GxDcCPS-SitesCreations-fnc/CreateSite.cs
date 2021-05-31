@@ -30,13 +30,14 @@ namespace GxDcCPSSitesCreationsfnc
         static readonly string PNP_TEMPLATE_FILE = "template.xml";
 
         static string siteRelativePath = "teams/scw";
-        static string hostname = "tbssctdev.sharepoint.com";
+       
         static string listTitle = "space requests";
-
+       
         static string appOnlyId = ConfigurationManager.AppSettings["AppOnlyID"];
         static string appOnlySecret = ConfigurationManager.AppSettings["AppOnlySecret"];
         static string CLIENT_ID = ConfigurationManager.AppSettings["CLIENT_ID"];
         static string CLIENT_SECERET = ConfigurationManager.AppSettings["CLIENT_SECRET"];
+        
 
         [FunctionName("CreateSite")]
         public static void Run([QueueTrigger("ccapplication", Connection = "")] CCApplication myQueueItem,TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext)
@@ -44,7 +45,10 @@ namespace GxDcCPSSitesCreationsfnc
             try
             {
                 log.Info($"C# Queue trigger function processed: {myQueueItem.name}");
-
+                string TENANT_ID = ConfigurationManager.AppSettings["TENANT_ID"];
+                string TENANT_NAME = ConfigurationManager.AppSettings["TENANT_NAME"];
+                string hostname = $"{TENANT_NAME}.sharepoint.com";
+                string TEAMS_INIT_USERID = ConfigurationManager.AppSettings["TEAMS_INIT_USERID"];
                 var displayName = myQueueItem.name;
                 var description = myQueueItem.description;
                 var mailNickname = myQueueItem.mailNickname;
@@ -53,12 +57,9 @@ namespace GxDcCPSSitesCreationsfnc
                 var requesterName = myQueueItem.requesterName;
                 var requesterEmail = myQueueItem.requesterEmail;
 
-                string targetSiteUrl = $"https://tbssctdev.sharepoint.com/teams/{mailNickname}";
+                string targetSiteUrl = $"https://{TENANT_NAME}.sharepoint.com/teams/{mailNickname}";
 
-                log.Info($"Fetched App Only ID '{appOnlyId}' from AppSettings.'");
-                log.Info($"Fetched App Only secret '{appOnlySecret}' from AppSettings.'");
-
-                var authResult = GetOneAccessToken();
+                var authResult = GetOneAccessToken(TENANT_ID);
                 var graphClient = GetGraphClient(authResult);
 
                 var siteId = GetSiteId(graphClient, log, siteRelativePath, hostname).GetAwaiter().GetResult();
@@ -66,7 +67,7 @@ namespace GxDcCPSSitesCreationsfnc
 
                 var groupId = CreateGroupAndSite(graphClient, log, description, displayName, mailNickname).GetAwaiter().GetResult();
                 log.Info($"Group id is {groupId}");
-                AddLicensedUserToGroup(graphClient, log, groupId);
+                AddLicensedUserToGroup(graphClient, log, groupId, TEAMS_INIT_USERID);
 
                 log.Info("Wait 3 minutes for site setup.");
                 Thread.Sleep(3 * 60 * 1000);
@@ -266,18 +267,17 @@ namespace GxDcCPSSitesCreationsfnc
         /// This method will get AAD access token.
         /// </summary>
         /// <returns></returns>
-        public static string GetOneAccessToken()
+        public static string GetOneAccessToken(string TENANT_ID)
         {
             string token = "";
 
-            string TENAT_ID = "ddbd240e-11ba-47a6-abeb-e1a6be847a17";
             string TOKEN_ENDPOINT = "";
             string MS_GRAPH_SCOPE = "";
             string GRANT_TYPE = "";
 
             try
             {
-                TOKEN_ENDPOINT = "https://login.microsoftonline.com/" + TENAT_ID + "/oauth2/v2.0/token";
+                TOKEN_ENDPOINT = "https://login.microsoftonline.com/" + TENANT_ID + "/oauth2/v2.0/token";
                 MS_GRAPH_SCOPE = "https://graph.microsoft.com/.default";
                 GRANT_TYPE = "client_credentials";
             }
@@ -325,11 +325,11 @@ namespace GxDcCPSSitesCreationsfnc
         }
 
         //Add licensed user
-        public static async void AddLicensedUserToGroup(GraphServiceClient graphClient, TraceWriter log, string groupId)
+        public static async void AddLicensedUserToGroup(GraphServiceClient graphClient, TraceWriter log, string groupId, string TEAMS_INIT_USERID)
         {
             var directoryObject = new DirectoryObject
             {
-                Id = "552b16be-8a50-460c-ba24-907f45376ac1" //teamcreator
+                Id = TEAMS_INIT_USERID //teamcreator
             };
 
             await graphClient.Groups[groupId].Owners.References
