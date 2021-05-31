@@ -228,13 +228,11 @@ namespace GxDcCPSSitesCreationsfnc
 
             log.Info($"schemaDir is {schemaDir}");
             XMLTemplateProvider sitesProvider = new XMLFileSystemTemplateProvider(schemaDir, "");
-
         
             ProvisioningTemplate template = sitesProvider.GetTemplate(PNP_TEMPLATE_FILE); 
             log.Info($"Successfully found template with ID '{template.Id}'");
           
       
-           
 
             ProvisioningTemplateApplyingInformation ptai = new ProvisioningTemplateApplyingInformation
             {
