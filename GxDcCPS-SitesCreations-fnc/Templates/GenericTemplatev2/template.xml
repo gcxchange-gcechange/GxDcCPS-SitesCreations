@@ -82,7 +82,7 @@
           </pnp:RoleAssignments>
         </pnp:Permissions>
       </pnp:Security>
-      <pnp:Navigation AddNewPagesToNavigation="true" CreateFriendlyUrlsForNewPages="true">
+      <pnp:Navigation AddNewPagesToNavigation="false" CreateFriendlyUrlsForNewPages="true">
         <pnp:GlobalNavigation NavigationType="Structural">
           <pnp:StructuralNavigation RemoveExistingNodes="true" />
         </pnp:GlobalNavigation>
@@ -535,7 +535,7 @@
 			<pnp:File Src="SiteAssets/__siteIcon__.png" Folder="SiteAssets/" Overwrite="true" Level="Published" />
 		</pnp:Files>
       <pnp:ClientSidePages>
-        <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" EnableComments="false" Layout="Home" Title="Home" ThumbnailUrl="" PageName="Home.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" EnableComments="false" Layout="Home" Title="Home / Accueil" ThumbnailUrl="" PageName="Home.aspx">
           <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="OneColumn" BackgroundEmphasis="Strong">
