@@ -64,6 +64,7 @@ namespace GxDcCPSSitesCreationsfnc
 
                 var siteId = GetSiteId(graphClient, log, siteRelativePath, hostname).GetAwaiter().GetResult();
                 var listId = GetSiteListId(graphClient, siteId, listTitle).GetAwaiter().GetResult();
+                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
 
                 var groupId = CreateGroupAndSite(graphClient, log, description, displayName, mailNickname).GetAwaiter().GetResult();
                 log.Info($"Group id is {groupId}");
@@ -72,10 +73,8 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info("Wait 3 minutes for site setup.");
                 Thread.Sleep(3 * 60 * 1000);
 
-                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
-
                 ClientContext ctx = new OfficeDevPnP.Core.AuthenticationManager().GetAppOnlyAuthenticatedContext(targetSiteUrl, appOnlyId, appOnlySecret);
-                ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions);
+                ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions, TENANT_ID);
                 UpdateStatus(graphClient, log, itemId, siteId, listId);
 
                 //send message to create-tems queue
@@ -201,7 +200,7 @@ namespace GxDcCPSSitesCreationsfnc
         /// <param name="ctx"></param>
         /// <param name="log"></param>
         /// <param name="functionContext"></param>
-        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext, string description)
+        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext, string description, string TENANT_ID)
         {    try
             {
             ctx.RequestTimeout = Timeout.Infinite;
@@ -248,8 +247,14 @@ namespace GxDcCPSSitesCreationsfnc
 
             string[] descriptions = description.Split('|');
 
+            string ALL_USER_GROUP = ConfigurationManager.AppSettings["ALL_USER_GROUP"];
+            string HUB_URL = ConfigurationManager.AppSettings["HUB_URL"];
+
             template.Parameters.Add("descEN", descriptions[0]);
             template.Parameters.Add("descFR", descriptions[1]);
+            template.Parameters.Add("TENANT_ID", TENANT_ID);
+            template.Parameters.Add("ALL_USER_GROUP", ALL_USER_GROUP);
+            template.Parameters.Add("HUB_URL", HUB_URL);
 
             web.ApplyProvisioningTemplate(template, ptai);
 
