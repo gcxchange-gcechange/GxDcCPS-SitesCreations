@@ -13,6 +13,7 @@ using OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers;
 using OfficeDevPnP.Core.Framework.Provisioning.Connectors;
 using System.IO;
 using System.Web;
+using System.Linq;
 using System.Web.Script.Serialization;
 using Microsoft.Graph;
 using System.Net.Http.Headers;
@@ -64,6 +65,8 @@ namespace GxDcCPSSitesCreationsfnc
 
                 var siteId = GetSiteId(graphClient, log, siteRelativePath, hostname).GetAwaiter().GetResult();
                 var listId = GetSiteListId(graphClient, siteId, listTitle).GetAwaiter().GetResult();
+                var siteDescriptions = GetSiteDescriptions(graphClient, siteId, listId, itemId).GetAwaiter().GetResult();
+                var ownerInfo = GetOwnerInfo(graphClient, log, emails).GetAwaiter().GetResult();
 
                 var groupId = CreateGroupAndSite(graphClient, log, description, displayName, mailNickname).GetAwaiter().GetResult();
                 log.Info($"Group id is {groupId}");
@@ -73,7 +76,7 @@ namespace GxDcCPSSitesCreationsfnc
                 Thread.Sleep(3 * 60 * 1000);
 
                 ClientContext ctx = new OfficeDevPnP.Core.AuthenticationManager().GetAppOnlyAuthenticatedContext(targetSiteUrl, appOnlyId, appOnlySecret);
-                ApplyProvisioningTemplate(ctx, log, functionContext);
+                ApplyProvisioningTemplate(ctx, log, functionContext, siteDescriptions, TENANT_ID, ownerInfo);
                 UpdateStatus(graphClient, log, itemId, siteId, listId);
 
                 //send message to create-tems queue
@@ -199,7 +202,7 @@ namespace GxDcCPSSitesCreationsfnc
         /// <param name="ctx"></param>
         /// <param name="log"></param>
         /// <param name="functionContext"></param>
-        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext)
+        public static void ApplyProvisioningTemplate(ClientContext ctx, TraceWriter log, Microsoft.Azure.WebJobs.ExecutionContext functionContext, string description, string TENANT_ID, List<string> ownerInfo)
         {    try
             {
             ctx.RequestTimeout = Timeout.Infinite;
@@ -217,23 +220,21 @@ namespace GxDcCPSSitesCreationsfnc
                 string workingDirectory = Environment.CurrentDirectory;
                 currentDirectory = System.IO.Directory.GetParent(workingDirectory).Parent.Parent.FullName;
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplate";
+                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplatev2";
             }
             else
             {
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplate";
+                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplatev2";
             }
 
             log.Info($"schemaDir is {schemaDir}");
             XMLTemplateProvider sitesProvider = new XMLFileSystemTemplateProvider(schemaDir, "");
-
         
             ProvisioningTemplate template = sitesProvider.GetTemplate(PNP_TEMPLATE_FILE); 
             log.Info($"Successfully found template with ID '{template.Id}'");
           
       
-           
 
             ProvisioningTemplateApplyingInformation ptai = new ProvisioningTemplateApplyingInformation
             {
@@ -245,6 +246,26 @@ namespace GxDcCPSSitesCreationsfnc
             FileSystemConnector connector = new FileSystemConnector(schemaDir, "");
 
             template.Connector = connector;
+
+            string[] descriptions = description.Split('|');
+
+            string ALL_USER_GROUP = ConfigurationManager.AppSettings["ALL_USER_GROUP"];
+            string HUB_URL = ConfigurationManager.AppSettings["HUB_URL"];
+
+            // Add site information
+            template.Parameters.Add("descEN", descriptions[0]);
+            template.Parameters.Add("descFR", descriptions[1]);
+            template.Parameters.Add("TENANT_ID", TENANT_ID);
+            template.Parameters.Add("ALL_USER_GROUP", ALL_USER_GROUP);
+            template.Parameters.Add("HUB_URL", HUB_URL);
+
+            // Add user information
+            template.Parameters.Add("UserOneId", ownerInfo[0]);
+            template.Parameters.Add("UserOneName", ownerInfo[1]);
+            template.Parameters.Add("UserOneMail", ownerInfo[2]);
+            template.Parameters.Add("UserTwoId", ownerInfo[3]);
+            template.Parameters.Add("UserTwoName", ownerInfo[4]);
+            template.Parameters.Add("UserTwoMail", ownerInfo[5]);
 
             web.ApplyProvisioningTemplate(template, ptai);
 
@@ -370,6 +391,76 @@ namespace GxDcCPSSitesCreationsfnc
                 break;
             }
             return listId;
+        }
+
+        /// <summary>
+        /// Get English | French description from space requests
+        /// </summary>
+        /// <param name="graphClient"></param>
+        /// <param name="siteId"></param>
+        /// <param name="listId"></param>
+        /// <param name="itemId"></param>
+        /// <returns></returns>
+        public static async Task<string> GetSiteDescriptions(GraphServiceClient graphClient, string siteId, string listId, string itemId)
+        {
+
+            var items = await graphClient.Sites[siteId].Lists[listId].Items[itemId].Fields
+                .Request()
+                .Select("Space_x0020_Description_x0020__x, Space_x0020_Description_x0020__x0")
+                .GetAsync();
+
+            var descEn = items.AdditionalData["Space_x0020_Description_x0020__x"];
+            var descfr = items.AdditionalData["Space_x0020_Description_x0020__x0"];
+
+            return descEn + "|" + descfr;
+        }
+
+        /// <summary>
+        /// Get Owner information for people webpart
+        /// </summary>
+        /// <param name="graphClient"></param>
+        /// <param name="emails"></param>
+        /// <returns></returns>
+        public static async Task<List<string>> GetOwnerInfo(GraphServiceClient graphClient, TraceWriter log, string emails)
+        {
+
+            List<string> emailList = emails.Split(',').ToList<string>();
+            List<string> userInfo = new List<string>();
+
+            foreach (var i in emailList)
+            {
+                IGraphServiceUsersCollectionPage users;
+
+                if (i.Contains($"#EXT#"))
+                {
+                    var str = i.Remove(i.IndexOf("#"));
+                    users = await graphClient.Users
+                            .Request()
+                            .Filter($@"startsWith(userPrincipalName, '{str}')")
+                            .Select("id,")
+                            .GetAsync();
+                }
+                else
+                {
+                    users = await graphClient.Users
+                    .Request()
+                    .Filter($@"mail eq '{i}'")
+                    .Select("id, displayName, Mail")
+                    .GetAsync();
+                }
+
+                foreach (var user in users)
+                {
+                    userInfo.Add(user.Id);
+                    userInfo.Add(user.DisplayName);
+                    userInfo.Add(user.Mail);
+                }
+            }
+
+
+            return userInfo;
+
+
         }
     }
 }
