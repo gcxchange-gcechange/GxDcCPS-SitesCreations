@@ -523,9 +523,6 @@
 			<pnp:File Src="SiteAssets/SitePages/Communications/5340-gouv_EN_couleurs-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
 			<pnp:File Src="SiteAssets/SitePages/Communications/10004-Canada-couleur-01.png" Folder="SiteAssets/SitePages/Communications" Overwrite="true" Level="Published" />
 			<pnp:File Src="SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg" Folder="SiteAssets/SitePages/About-us" Overwrite="true" Level="Published" />
-			<pnp:File Src="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg" Folder="SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning" Overwrite="true" Level="Published" />
-			<pnp:File Src="SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg" Folder="SiteAssets/SitePages/Welcome-to--CommsChat" Overwrite="true" Level="Published" />
-			<pnp:File Src="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg" Folder="SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier" Overwrite="true" Level="Published" />
 			<pnp:File Src="SiteAssets/__siteIcon__.png" Folder="SiteAssets/" Overwrite="true" Level="Published" />
 		</pnp:Files>
       <pnp:ClientSidePages>
@@ -562,11 +559,6 @@
 				<pnp:CanvasControl WebPartType="Spacer" JsonControlData="{&quot;id&quot;: &quot;8654b779-4886-46d4-8ffb-b5ed960ee986&quot;, &quot;instanceId&quot;: &quot;e81aa133-8341-4265-9550-98f17a86c911&quot;, &quot;title&quot;: &quot;Spacer&quot;, &quot;description&quot;: &quot;Spacer&quot;, &quot;dataVersion&quot;: &quot;1.0&quot;, &quot;properties&quot;: {&quot;autoHide&quot;:true,&quot;height&quot;:60}, &quot;serverProcessedContent&quot;: {&quot;htmlStrings&quot;:{},&quot;searchablePlainTexts&quot;:{},&quot;imageSources&quot;:{},&quot;links&quot;:{}}, &quot;dynamicDataPaths&quot;: {}, &quot;dynamicDataValues&quot;: {}}" ControlId="8654b779-4886-46d4-8ffb-b5ed960ee986" Order="5" Column="1" />
               </pnp:Controls>
             </pnp:Section>
-            <pnp:Section Order="3" Type="OneColumn" BackgroundEmphasis="Soft">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="News" JsonControlData="{&quot;id&quot;: &quot;8c88f208-6c77-4bdb-86a0-0c47b4316588&quot;, &quot;instanceId&quot;: &quot;f7bfdec9-09c5-4fb6-bc97-3ba225d35ad4&quot;, &quot;title&quot;: &quot;News&quot;, &quot;description&quot;: &quot;News&quot;, &quot;dataVersion&quot;: &quot;1.12&quot;, &quot;properties&quot;: {&quot;layoutId&quot;:&quot;GridNews&quot;,&quot;dataProviderId&quot;:&quot;news&quot;,&quot;emptyStateHelpItemsCount&quot;:&quot;1&quot;,&quot;showChrome&quot;:true,&quot;carouselSettings&quot;:{&quot;autoplay&quot;:false,&quot;autoplaySpeed&quot;:5,&quot;dots&quot;:true,&quot;lazyLoad&quot;:true},&quot;showNewsMetadata&quot;:{&quot;showSocialActions&quot;:true,&quot;showAuthor&quot;:true,&quot;showDate&quot;:true},&quot;prefetchCount&quot;:4,&quot;filters&quot;:[{&quot;filterType&quot;:1,&quot;value&quot;:&quot;&quot;,&quot;values&quot;:[]}],&quot;newsDataSourceProp&quot;:1,&quot;newsSiteList&quot;:[],&quot;renderItemsSliderValue&quot;:4,&quot;webId&quot;:&quot;{siteid}&quot;,&quot;siteId&quot;:&quot;{sitecollectionid}&quot;,&quot;pinnedItems&quot;:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],&quot;serializedFilterQuery&quot;:&quot;&lt;Where&gt;&lt;Eq&gt;&lt;FieldRef Name=\&quot;FSObjType\&quot; /&gt;&lt;Value Type=\&quot;Integer\&quot;&gt;0&lt;/Value&gt;&lt;/Eq&gt;&lt;/Where&gt;&quot;,&quot;templateId&quot;:&quot;GridNews&quot;,&quot;propsLastEdited&quot;:&quot;2020-10-07T16:14:19.196Z&quot;,&quot;compactMode&quot;:false,&quot;carouselHeroWrapperComponentId&quot;:&quot;&quot;,&quot;layoutComponentId&quot;:&quot;&quot;,&quot;filterKQLQuery&quot;:&quot;&quot;}, &quot;serverProcessedContent&quot;: {&quot;htmlStrings&quot;:{},&quot;searchablePlainTexts&quot;:{&quot;title&quot;:&quot;Articles&quot;},&quot;imageSources&quot;:{},&quot;links&quot;:{&quot;baseUrl&quot;:&quot;https://{fqdn}{site}&quot;}}, &quot;dynamicDataPaths&quot;: {}, &quot;dynamicDataValues&quot;: {}}" ControlId="8c88f208-6c77-4bdb-86a0-0c47b4316588" Order="1" Column="1" />
-              </pnp:Controls>
-            </pnp:Section>
             <pnp:Section Order="4" Type="OneColumn">
               <pnp:Controls>
 				  <pnp:CanvasControl WebPartType="People" JsonControlData="{&quot;id&quot;: &quot;7f718435-ee4d-431c-bdbf-9c4ff326f46e&quot;,&quot;instanceId&quot;: &quot;2591541e-2117-49b8-8db8-72abceb8c07d&quot;,&quot;title&quot;: &quot;People&quot;,&quot;description&quot;: &quot;Display selected people and their profiles&quot;,&quot;dataVersion&quot;: &quot;1.3&quot;,&quot;properties&quot;: {&quot;layout&quot;:1,&quot;persons&quot;:[{&quot;id&quot;:&quot;{parameter:UserOneId}&quot;,&quot;role&quot;:&quot;&quot;,&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;upn&quot;:&quot;&quot;,&quot;phone&quot;:&quot;&quot;,&quot;sip&quot;:&quot;&quot;,&quot;department&quot;:&quot;&quot;},{&quot;id&quot;:&quot;{parameter:UserTwoId}&quot;,&quot;role&quot;:&quot;&quot;,&quot;firstName&quot;:&quot;&quot;,&quot;lastName&quot;:&quot;&quot;,&quot;upn&quot;:&quot;&quot;,&quot;phone&quot;:&quot;&quot;,&quot;sip&quot;:&quot;&quot;,&quot;department&quot;:&quot;&quot;}]},&quot;serverProcessedContent&quot;: {&quot;htmlStrings&quot;:{},&quot;searchablePlainTexts&quot;:{&quot;title&quot;:&quot;Community leaders / Leaders communautaires&quot;,&quot;persons[0].name&quot;:&quot;{parameter:UserOneName}&quot;,&quot;persons[1].name&quot;:&quot;{parameter:UserTwoName}&quot;,&quot;persons[0].email&quot;:&quot;{parameter:UserOneMail}&quot;,&quot;persons[1].email&quot;:&quot;{parameter:UserTwoMail}&quot;,},&quot;imageSources&quot;:{},&quot;links&quot;:{}},&quot;dynamicDataPaths&quot;: {},&quot;dynamicDataValues&quot;: {}}" ControlId="7f718435-ee4d-431c-bdbf-9c4ff326f46e" Order="1" Column="1"/>
@@ -588,48 +580,6 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How apps can make corporate communications easier" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg}&amp;ext=jpg" PageName="How-apps-can-make-corporate-communications-easier.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="7952e090-a9c9-4423-a3ab-ba25ae21208d" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a title=&quot;{site}/SitePages/Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx&quot; data-interception=&quot;on&quot; data-cke-saved-href=&quot;{site}/SitePages/Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx&quot; href=&quot;{site}/SitePages/Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx&quot;&gt;Cliquez ici pour la version française&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Add your text here&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: Welcome to #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg}&amp;ext=jpg" PageName="Welcome-to--CommsChat.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="7c2c8631-8102-480f-925a-a664ac529dfd" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a href=&quot;{site}/SitePages/Exemple-d’article---Bienvenue-à--CommsChat.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/Exemple-d’article---Bienvenue-à--CommsChat.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/Exemple-d’article---Bienvenue-à--CommsChat.aspx&quot;&gt;Cliquez ici pour la version française&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Add your text here&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Story example: How to develop strategic messaging" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="ec90a690-301e-4152-b7bf-8940d1e23d36" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a title=&quot;{site}/SitePages/Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx&quot; data-interception=&quot;on&quot; data-cke-saved-href=&quot;{site}/SitePages/Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx&quot; href=&quot;{site}/SitePages/Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx&quot;&gt;Cliquez ici pour la version française&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Add your text here&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
         <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="About us / À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="About-us.aspx">
           <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
@@ -639,63 +589,6 @@
                 <pnp:CanvasControl WebPartType="Text" ControlId="50f0f635-a861-4c8f-8a7a-30d85b5af2f9" Order="1" Column="2">
                   <pnp:CanvasControlProperties>
                     <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a href=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot;&gt;Cliquez ici pour la version française&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Add your text here&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="Exemple-d’article---À-propos-de-nous.aspx">
-          <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="TwoColumnRight">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Image" JsonControlData="{&quot;id&quot;: &quot;d1d91016-032f-456d-98a4-721247c305e8&quot;, &quot;instanceId&quot;: &quot;eabce0b4-4091-4d9d-8ae7-0e082e26a610&quot;, &quot;title&quot;: &quot;Image&quot;, &quot;description&quot;: &quot;Image&quot;, &quot;dataVersion&quot;: &quot;1.9&quot;, &quot;properties&quot;: {&quot;imageSourceType&quot;:2,&quot;captionText&quot;:&quot;&quot;,&quot;altText&quot;:&quot;A man in front of a board&quot;,&quot;linkUrl&quot;:&quot;&quot;,&quot;overlayText&quot;:&quot;&quot;,&quot;fileName&quot;:&quot;&quot;,&quot;siteId&quot;:&quot;{sitecollectionid}&quot;,&quot;webId&quot;:&quot;{siteid}&quot;,&quot;listId&quot;:&quot;{listid:Site Assets}&quot;,&quot;uniqueId&quot;:&quot;125e3b44-fad6-461a-91e1-bcbcb231eb36&quot;,&quot;imgWidth&quot;:5126,&quot;imgHeight&quot;:3418,&quot;alignment&quot;:&quot;Center&quot;,&quot;fixAspectRatio&quot;:false,&quot;isOverlayTextEnabled&quot;:false}, &quot;serverProcessedContent&quot;: {&quot;htmlStrings&quot;:{},&quot;searchablePlainTexts&quot;:{},&quot;imageSources&quot;:{&quot;imageSource&quot;:&quot;{site}/SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg&quot;},&quot;links&quot;:{},&quot;customMetadata&quot;:{&quot;imageSource&quot;:{&quot;siteId&quot;:&quot;{sitecollectionid}&quot;,&quot;webId&quot;:&quot;{siteid}&quot;,&quot;listId&quot;:&quot;{listid:Site Assets}&quot;,&quot;uniqueId&quot;:&quot;125e3b44-fad6-461a-91e1-bcbcb231eb36&quot;,&quot;width&quot;:5126,&quot;height&quot;:3418}}}, &quot;dynamicDataPaths&quot;: {}, &quot;dynamicDataValues&quot;: {}}" ControlId="d1d91016-032f-456d-98a4-721247c305e8" Order="1" Column="1" />
-                <pnp:CanvasControl WebPartType="Text" ControlId="266f71f6-3e41-4f4e-bcf5-318f12efce9b" Order="1" Column="2">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a href=&quot;{site}/SitePages/About-us.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/About-us.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/About-us.aspx&quot;&gt;Click here for english version&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ajoutez votre texte ici&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment élaborer des messages stratégiques" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning/business.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-élaborer-des-messages-stratégiques.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="fc9aef7a-837c-4f75-8a72-0c4fcb1cfd25" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;​​​​​​​&lt;a title=&quot;{site}/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx&quot; data-interception=&quot;on&quot; data-cke-saved-href=&quot;{site}/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx&quot; href=&quot;{site}/SitePages/Strategic-communication--How-to-develop-strategic-massaging-and-positioning.aspx&quot;&gt;Click here for english version&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ajoutez votre texte ici&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Bienvenue à #CommsChat" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/Welcome-to--CommsChat/studio-microphone-in-front-of-radio-station-PBWVM4G.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Bienvenue-à--CommsChat.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="bb9f2a2c-128c-4d69-96cd-dabf83f640af" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;​​​​​​​&lt;a href=&quot;{site}/SitePages/Welcome-to--CommsChat.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/Welcome-to--CommsChat.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/Welcome-to--CommsChat.aspx&quot;&gt;Click here for english version&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ajoutez votre texte ici&lt;/p&gt;" />
-                  </pnp:CanvasControlProperties>
-                </pnp:CanvasControl>
-              </pnp:Controls>
-            </pnp:Section>
-          </pnp:Sections>
-        </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : Comment les applications peuvent faciliter les communications d’entreprise" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/How-apps-can-make-corporate-communications-easier/rawpixel-597438-unsplash.jpg}&amp;ext=jpg" PageName="Exemple-d’article---Comment-les-applications-peuvent-faciliter-les-communications-d’entreprise.aspx">
-          <pnp:Header Type="Default" LayoutType="FullWidthImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
-          <pnp:Sections>
-            <pnp:Section Order="1" Type="OneColumn">
-              <pnp:Controls>
-                <pnp:CanvasControl WebPartType="Text" ControlId="61d10af4-9501-42da-9134-95db9058d7a9" Order="1" Column="1">
-                  <pnp:CanvasControlProperties>
-                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;​​​​​​​&lt;a href=&quot;{site}/SitePages/How-apps-can-make-corporate-communications-easier.aspx&quot; data-cke-saved-href=&quot;h{site}/SitePages/How-apps-can-make-corporate-communications-easier.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/How-apps-can-make-corporate-communications-easier.aspx&quot;&gt;Click here for english version&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ajoutez votre texte ici&lt;/p&gt;" />
                   </pnp:CanvasControlProperties>
                 </pnp:CanvasControl>
               </pnp:Controls>
