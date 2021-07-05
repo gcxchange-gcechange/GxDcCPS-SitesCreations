@@ -585,7 +585,7 @@
             </pnp:Section>
           </pnp:Sections>
         </pnp:ClientSidePage>
-        <pnp:ClientSidePage PromoteAsNewsArticle="true" PromoteAsTemplate="false" Overwrite="true" Title="About us / À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="About-us.aspx">
+        <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" Title="About us / À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="About-us.aspx">
           <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
           <pnp:Sections>
             <pnp:Section Order="1" Type="TwoColumnRight">
@@ -594,6 +594,21 @@
                 <pnp:CanvasControl WebPartType="Text" ControlId="50f0f635-a861-4c8f-8a7a-30d85b5af2f9" Order="1" Column="2">
                   <pnp:CanvasControlProperties>
                     <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a href=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/Exemple-d’article---À-propos-de-nous.aspx&quot;&gt;Cliquez ici pour la version française&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Add your text here&lt;/p&gt;" />
+                  </pnp:CanvasControlProperties>
+                </pnp:CanvasControl>
+              </pnp:Controls>
+            </pnp:Section>
+          </pnp:Sections>
+        </pnp:ClientSidePage>
+	    <pnp:ClientSidePage PromoteAsNewsArticle="false" PromoteAsTemplate="false" Overwrite="true" Title="Exemple d’article : À propos de nous" ThumbnailUrl="{site}/_layouts/15/getpreview.ashx?guidSite={sitecollectionid}&amp;guidWeb={siteid}&amp;guidFile={fileuniqueid:SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg}&amp;ext=jpg" PageName="Exemple-d’article---À-propos-de-nous.aspx">
+          <pnp:Header Type="Custom" ServerRelativeImageUrl="/_LAYOUTS/IMAGES/SLEEKTEMPLATEIMAGETILE.JPG" LayoutType="NoImage" TextAlignment="Center" ShowTopicHeader="false" ShowPublishDate="false" TopicHeader="" AlternativeText="" Authors="[]" AuthorByLine="[]" AuthorByLineId="-1" />
+          <pnp:Sections>
+            <pnp:Section Order="1" Type="TwoColumnRight">
+              <pnp:Controls>
+                <pnp:CanvasControl WebPartType="Image" JsonControlData="{&quot;id&quot;: &quot;d1d91016-032f-456d-98a4-721247c305e8&quot;, &quot;instanceId&quot;: &quot;eabce0b4-4091-4d9d-8ae7-0e082e26a610&quot;, &quot;title&quot;: &quot;Image&quot;, &quot;description&quot;: &quot;Image&quot;, &quot;dataVersion&quot;: &quot;1.9&quot;, &quot;properties&quot;: {&quot;imageSourceType&quot;:2,&quot;captionText&quot;:&quot;&quot;,&quot;altText&quot;:&quot;A man in front of a board&quot;,&quot;linkUrl&quot;:&quot;&quot;,&quot;overlayText&quot;:&quot;&quot;,&quot;fileName&quot;:&quot;&quot;,&quot;siteId&quot;:&quot;{sitecollectionid}&quot;,&quot;webId&quot;:&quot;{siteid}&quot;,&quot;listId&quot;:&quot;{listid:Site Assets}&quot;,&quot;uniqueId&quot;:&quot;125e3b44-fad6-461a-91e1-bcbcb231eb36&quot;,&quot;imgWidth&quot;:5126,&quot;imgHeight&quot;:3418,&quot;alignment&quot;:&quot;Center&quot;,&quot;fixAspectRatio&quot;:false,&quot;isOverlayTextEnabled&quot;:false}, &quot;serverProcessedContent&quot;: {&quot;htmlStrings&quot;:{},&quot;searchablePlainTexts&quot;:{},&quot;imageSources&quot;:{&quot;imageSource&quot;:&quot;{site}/SiteAssets/SitePages/About-us/3856-Person-creating-a-calendar-with-adhesive-notes-on-a-blackboard.jpg&quot;},&quot;links&quot;:{},&quot;customMetadata&quot;:{&quot;imageSource&quot;:{&quot;siteId&quot;:&quot;{sitecollectionid}&quot;,&quot;webId&quot;:&quot;{siteid}&quot;,&quot;listId&quot;:&quot;{listid:Site Assets}&quot;,&quot;uniqueId&quot;:&quot;125e3b44-fad6-461a-91e1-bcbcb231eb36&quot;,&quot;width&quot;:5126,&quot;height&quot;:3418}}}, &quot;dynamicDataPaths&quot;: {}, &quot;dynamicDataValues&quot;: {}}" ControlId="d1d91016-032f-456d-98a4-721247c305e8" Order="1" Column="1" />
+                <pnp:CanvasControl WebPartType="Text" ControlId="266f71f6-3e41-4f4e-bcf5-318f12efce9b" Order="1" Column="2">
+                  <pnp:CanvasControlProperties>
+                    <pnp:CanvasControlProperty Key="Text" Value="&lt;p&gt;&lt;a href=&quot;{site}/SitePages/About-us.aspx&quot; data-cke-saved-href=&quot;{site}/SitePages/About-us.aspx&quot; data-interception=&quot;on&quot; title=&quot;{site}/SitePages/About-us.aspx&quot;&gt;Click here for english version&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ajoutez votre texte ici&lt;/p&gt;" />
                   </pnp:CanvasControlProperties>
                 </pnp:CanvasControl>
               </pnp:Controls>
