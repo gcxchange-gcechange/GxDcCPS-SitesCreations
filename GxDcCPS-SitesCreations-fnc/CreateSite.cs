@@ -220,12 +220,12 @@ namespace GxDcCPSSitesCreationsfnc
                 string workingDirectory = Environment.CurrentDirectory;
                 currentDirectory = System.IO.Directory.GetParent(workingDirectory).Parent.Parent.FullName;
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplatev2";
+                schemaDir = dInfo + "\\GxDcCPS-SitesCreations-fnc\\bin\\Debug\\net461\\Templates\\GenericTemplate";
             }
             else
             {
                 dInfo = new DirectoryInfo(currentDirectory);
-                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplatev2";
+                schemaDir = dInfo.Parent.FullName + "\\Templates\\GenericTemplate";
             }
 
             log.Info($"schemaDir is {schemaDir}");
