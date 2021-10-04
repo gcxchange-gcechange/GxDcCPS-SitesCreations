@@ -250,6 +250,7 @@ namespace GxDcCPSSitesCreationsfnc
             string[] descriptions = description.Split('|');
 
             string ALL_USER_GROUP = ConfigurationManager.AppSettings["ALL_USER_GROUP"];
+            string ASSIGNED_GROUP = ConfigurationManager.AppSettings["ASSIGNED_GROUP"];
             string HUB_URL = ConfigurationManager.AppSettings["HUB_URL"];
 
             // Add site information
@@ -257,6 +258,7 @@ namespace GxDcCPSSitesCreationsfnc
             template.Parameters.Add("descFR", descriptions[1]);
             template.Parameters.Add("TENANT_ID", TENANT_ID);
             template.Parameters.Add("ALL_USER_GROUP", ALL_USER_GROUP);
+            template.Parameters.Add("ASSIGNED_GROUP", ASSIGNED_GROUP);
             template.Parameters.Add("HUB_URL", HUB_URL);
 
             // Add user information
