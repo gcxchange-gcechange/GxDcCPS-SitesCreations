@@ -48,7 +48,6 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info($"C# Queue trigger function processed: {myQueueItem.name}");
                 string TENANT_ID = ConfigurationManager.AppSettings["TENANT_ID"];
                 string TENANT_NAME = ConfigurationManager.AppSettings["TENANT_NAME"];
-                string GCX_SUPPORT = ConfigurationManager.AppSettings["GCX_SUPPORT"];
                 string hostname = $"{TENANT_NAME}.sharepoint.com";
                 string TEAMS_INIT_USERID = ConfigurationManager.AppSettings["TEAMS_INIT_USERID"];
                 var displayName = myQueueItem.name;
@@ -253,6 +252,7 @@ namespace GxDcCPSSitesCreationsfnc
             string ALL_USER_GROUP = ConfigurationManager.AppSettings["ALL_USER_GROUP"];
             string ASSIGNED_GROUP = ConfigurationManager.AppSettings["ASSIGNED_GROUP"];
             string HUB_URL = ConfigurationManager.AppSettings["HUB_URL"];
+            string GCX_SUPPORT = ConfigurationManager.AppSettings["GCX_SUPPORT"];
 
             // Add site information
             template.Parameters.Add("descEN", descriptions[0]);
@@ -261,6 +261,7 @@ namespace GxDcCPSSitesCreationsfnc
             template.Parameters.Add("ALL_USER_GROUP", ALL_USER_GROUP);
             template.Parameters.Add("ASSIGNED_GROUP", ASSIGNED_GROUP);
             template.Parameters.Add("HUB_URL", HUB_URL);
+            template.Parameters.Add("GCX_SUPPORT", GCX_SUPPORT);
 
             // Add user information
             template.Parameters.Add("UserOneId", ownerInfo[0]);
