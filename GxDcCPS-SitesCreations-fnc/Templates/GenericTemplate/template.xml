@@ -72,7 +72,7 @@
           <pnp:RoleAssignments>
             <pnp:RoleAssignment Principal="{parameter:ALL_USER_GROUP}" RoleDefinition="{roledefinition:Reader}" />
             <pnp:RoleAssignment Principal="{parameter:ASSIGNED_GROUP}" RoleDefinition="{roledefinition:Reader}" />
-            <pnp:RoleAssignment Principal="{parameter:GCX_SUPPORT}" RoleDefinition="{roledefinition:Administrator}" />
+            <pnp:RoleAssignment Principal="GCX_SUPPORT" RoleDefinition="{roledefinition:Administrator}" />
           </pnp:RoleAssignments>
         </pnp:Permissions>
       </pnp:Security>
