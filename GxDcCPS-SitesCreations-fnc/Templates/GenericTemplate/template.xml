@@ -18,7 +18,7 @@
       </pnp:PropertyBagEntries>
       <pnp:Security AssociatedOwnerGroup="{groupsitetitle} Owners" AssociatedMemberGroup="{groupsitetitle} Members" AssociatedVisitorGroup="{groupsitetitle} Visitors">
         <pnp:AdditionalAdministrators>
-          <pnp:User Name="c:0t.c|tenant|a03e8c8a-515a-4380-bf33-83fcf79ca857" />
+          <pnp:User Name="c:0t.c|tenant|77582dc8-6ce7-4a43-9bdd-96e95ce5c78c" />
         </pnp:AdditionalAdministrators>
         <pnp:Permissions>
           <!--<pnp:RoleDefinitions>
