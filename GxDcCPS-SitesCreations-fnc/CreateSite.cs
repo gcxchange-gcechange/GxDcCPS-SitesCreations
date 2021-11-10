@@ -253,6 +253,8 @@ namespace GxDcCPSSitesCreationsfnc
             string ASSIGNED_GROUP = ConfigurationManager.AppSettings["ASSIGNED_GROUP"];
             string HUB_URL = ConfigurationManager.AppSettings["HUB_URL"];
             string GCX_SUPPORT = ConfigurationManager.AppSettings["GCX_SUPPORT"];
+            string GCX_SCA = ConfigurationManager.AppSettings["GCX_SCA"];
+
 
             // Add site information
             template.Parameters.Add("descEN", descriptions[0]);
@@ -262,6 +264,8 @@ namespace GxDcCPSSitesCreationsfnc
             template.Parameters.Add("ASSIGNED_GROUP", ASSIGNED_GROUP);
             template.Parameters.Add("HUB_URL", HUB_URL);
             template.Parameters.Add("GCX_SUPPORT", GCX_SUPPORT);
+            template.Parameters.Add("GCX_SCA", GCX_SCA);
+
 
             // Add user information
             template.Parameters.Add("UserOneId", ownerInfo[0]);

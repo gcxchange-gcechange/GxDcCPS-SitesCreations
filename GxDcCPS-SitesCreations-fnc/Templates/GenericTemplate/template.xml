@@ -18,7 +18,7 @@
       </pnp:PropertyBagEntries>
       <pnp:Security AssociatedOwnerGroup="{groupsitetitle} Owners" AssociatedMemberGroup="{groupsitetitle} Members" AssociatedVisitorGroup="{groupsitetitle} Visitors">
         <pnp:AdditionalAdministrators>
-          <pnp:User Name="c:0t.c|tenant|a03e8c8a-515a-4380-bf33-83fcf79ca857" />
+          <pnp:User Name="c:0t.c|tenant|{parameter:GCX_SCA}" />
         </pnp:AdditionalAdministrators>
         <pnp:Permissions>
           <!--<pnp:RoleDefinitions>
