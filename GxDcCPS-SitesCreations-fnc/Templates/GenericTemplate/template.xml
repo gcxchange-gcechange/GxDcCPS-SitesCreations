@@ -72,7 +72,7 @@
           <pnp:RoleAssignments>
             <pnp:RoleAssignment Principal="{parameter:ALL_USER_GROUP}" RoleDefinition="{roledefinition:Reader}" />
             <pnp:RoleAssignment Principal="{parameter:ASSIGNED_GROUP}" RoleDefinition="{roledefinition:Reader}" />
-            <pnp:RoleAssignment Principal="GCX_SUPPORT" RoleDefinition="{roledefinition:Administrator}" />
+            <pnp:RoleAssignment Principal="{parameter:GCX_SUPPORT}" RoleDefinition="{roledefinition:Administrator}" />
           </pnp:RoleAssignments>
         </pnp:Permissions>
       </pnp:Security>
@@ -223,7 +223,7 @@
               <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
               <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
               <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
-              <pnp:RoleAssignment Principal="c:0t.c|tenant|01d08693-97f2-45ca-b0a4-7cc2ce240445" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|{parameter:GCX_SUPPORT}" RoleDefinition="Full Control" />
             </pnp:BreakRoleInheritance>
           </pnp:Security>
         </pnp:ListInstance>

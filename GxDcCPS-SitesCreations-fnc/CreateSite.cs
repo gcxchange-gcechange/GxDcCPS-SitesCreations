@@ -48,6 +48,7 @@ namespace GxDcCPSSitesCreationsfnc
                 log.Info($"C# Queue trigger function processed: {myQueueItem.name}");
                 string TENANT_ID = ConfigurationManager.AppSettings["TENANT_ID"];
                 string TENANT_NAME = ConfigurationManager.AppSettings["TENANT_NAME"];
+                string GCX_SUPPORT = ConfigurationManager.AppSettings["GCX_SUPPORT"];
                 string hostname = $"{TENANT_NAME}.sharepoint.com";
                 string TEAMS_INIT_USERID = ConfigurationManager.AppSettings["TEAMS_INIT_USERID"];
                 var displayName = myQueueItem.name;
