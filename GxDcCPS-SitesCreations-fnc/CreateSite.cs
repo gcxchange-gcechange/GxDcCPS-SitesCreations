@@ -143,6 +143,7 @@ namespace GxDcCPSSitesCreationsfnc
             }));
             return graphClient;
         }
+
         /// <summary>
         /// This method will create an Office 365 group
         /// </summary>
@@ -166,8 +167,8 @@ namespace GxDcCPSSitesCreationsfnc
                 MailEnabled = true,
                 MailNickname = mailNickname,
                 SecurityEnabled = false,
-                Visibility = "Private"
-
+                Visibility = "Private",
+                ResourceBehaviorOptions = new string[] { "WelcomeEmailDisabled" }
             };
 
             var result = await graphClient.Groups
@@ -177,6 +178,7 @@ namespace GxDcCPSSitesCreationsfnc
 
             return result.Id;
         }
+
         /// <summary>
         /// This method will update requests status in SharePoint list.
         /// </summary>
